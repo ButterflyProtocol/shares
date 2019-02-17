@@ -1,0 +1,5 @@
+$secondary: #f7fafc;
+
+$theme-colors: map-merge($theme-colors, (
+    "secondary":    $secondary
+));
