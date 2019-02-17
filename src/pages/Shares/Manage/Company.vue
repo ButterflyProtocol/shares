@@ -29,15 +29,15 @@
               </fg-input>
               <fg-input
                 placeholder="5552639850"
-                v-model="notify.phone">
+                v-model="phone">
                 <template slot="addonLeft">
                   <span class="input-group-text">Phone</span>
                 </template>
                 <template slot="addonRight">
                   <div class="btn-group" role="group">
-                    <button :disabled="work.notify" class="btn btn-success" type="button" @click="setPhone()">
-                      <div v-if="work.notify"> processing.. </div>
-                      <div v-else> notify </div>
+                    <button :disabled="work.settingPhone" class="btn btn-success" type="button" @click="setPhone()">
+                      <div v-if="work.settingPhone"> processing.. </div>
+                      <div v-else> set </div>
                     </button>
                   </div>
                 </template>
@@ -107,11 +107,12 @@ export default {
     return {
       token: { name: '', symbol: ''},
       minting: { amount: 100 },
-      notify: { phone: '' },
+      phone: '',
       fresh: false,
       work: {
         minting: false,
-        settingSymbol: false
+        settingSymbol: false,
+        settingPhone: false
       }
     };
   },
